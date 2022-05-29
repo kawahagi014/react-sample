@@ -1,23 +1,28 @@
-import { Login } from '../pages/Login';
-import { Page404 } from '../pages/Page404';
-import { Setting } from '../pages/Setting';
-import { UserManagement } from '../pages/UserMnageent';
+import { Home } from "../pages/Home";
+import { Login } from "../pages/Login";
+import { Page404 } from "../pages/Page404";
+import { Setting } from "../pages/Setting";
+import { UserManagement } from "../pages/UserMnageent";
 
 export const homeRoutes = [
   {
-    path: '/login',
+    path: "/",
+    children: <Home />,
+  },
+  {
+    path: "/login",
     children: <Login />,
   },
   {
-    path: '/user_management',
+    path: "/user_management",
     children: <UserManagement />,
   },
   {
-    path: '/setting',
+    path: "/setting",
     children: <Setting />,
   },
   {
-    path: '*',
+    path: "*",
     children: <Page404 />,
   },
 ];
