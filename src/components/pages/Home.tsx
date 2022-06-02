@@ -1,9 +1,3 @@
-import { memo, FC } from 'react';
-import { Outlet } from 'react-router-dom';
+import { memo, FC } from "react";
 
-export const Home: FC = memo(() => (
-  <>
-    <p>ホームページです</p>
-    <Outlet />
-  </>
-));
+export const Home: FC = memo(() => <p>ホームページです</p>);

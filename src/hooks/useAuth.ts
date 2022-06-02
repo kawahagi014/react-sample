@@ -1,9 +1,9 @@
-import axios from 'axios';
-import { useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { User } from '../types/api/user';
-import { useMessage } from './useMessage';
-import { useLoginUser } from './useLoginUsers';
+import axios from "axios";
+import { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { User } from "../types/api/user";
+import { useMessage } from "./useMessage";
+import { useLoginUser } from "./useLoginUsers";
 
 export const useAuth = () => {
   const history = useNavigate();
@@ -20,14 +20,14 @@ export const useAuth = () => {
         .then((res) => {
           if (res.data) {
             setLoginUser(res.data);
-            showMessage({ title: 'ログインしました', status: 'success' });
-            history('/home');
+            showMessage({ title: "ログインしました", status: "success" });
+            history("/home");
           } else {
-            showMessage({ title: 'ユーザーが見つかりません', status: 'error' });
+            showMessage({ title: "ユーザーが見つかりません", status: "error" });
           }
         })
         .catch(() =>
-          showMessage({ title: 'ログインできません', status: 'error' })
+          showMessage({ title: "ログインできません", status: "error" })
         )
         .finally(() => setLoading(false));
     },
