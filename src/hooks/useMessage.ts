@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const useMessage = () => {
-  const toast = useToast;
+  const toast = useToast();
 
   const showMessage = useCallback(
     (props: Props) => {
